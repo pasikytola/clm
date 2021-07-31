@@ -566,11 +566,12 @@ grid(nx = 11, ny = 25, col = "lightgray", lty = "dotted")
 asset_mu<-unlist(mu,use.names=FALSE)
 asset_sd<-unlist(lapply(dat[,c(-1)],function(asset) round(sd(asset)*sqrt(17/18),2)), use.names=FALSE)
 points(x=asset_mu,y=asset_sd,pch=16)
+points(x = 0.17, y = (167/522)*V[4] + (1-167/522)*V[5], pch = 16, col="red")
 asset_titles<-c(1:9)
 text(x=asset_mu,y=asset_sd,labels=asset_titles,pos=3)
 ```
 
-Kuvajaan on plotattu myös yksittäiset yhdeksän osaketta. Kuvaja, kuten myös kulmaportfoliot, täsmäävät kirjan [3] (s. 20, 25) kanssa.
+Kuvajaan on plotattu yksittäiset yhdeksän osaketta sekä punaisella tehokas 17% tuotto-odotuksen omaava kombinaatio. Kuvaja, kuten myös kulmaportfoliot, täsmäävät kirjan [3] (s. 20, 25) kanssa.
 
 Koetin vielä tarkistaa tekemällä simulaation satunnaisista kombinaatioista (10000 kpl) ja laskemalla niille tuotto-keskihajonta parit ja plottaamalla ne edellisen kuvajan päälle. En näillä saanut tarpeeksi sellaisia kombinaatioita, missä osa painokertoimista olisi nollaa vaan keskittyvät yhteen kohtaan:
 ```{r}
@@ -604,6 +605,8 @@ Mutta eivät ne ainakaan yli tehokkaan rintaman mene, eli sekin kertonee sitä, 
 ## 5. Huomioitavaa
 
 Koodin tämä versio (R hakemiston CLM.R tiedosto) kykenee käsittelemään 31 osaketta (ml. käteinen). Se tuottaa aina paljon debug-printtiä, joka auttaa seuraamaan miten totetus etenee. Se ei käsittele kirjassa mainittuja erikoistilanteita (kenties ei tarvitsekaan) ja ainoa rajoite mitä koodi tukee on $\sum \operatorname {X}_i=1$.
+
+Ohjelma edellyttää, että R lisäosat hash ja lpSolve on asennettu install.packages() komennolla.
 
 Olen ajatellut käyttäväni menetelmää siten, että plottaan omien osakkeitteni tehokkaan rintaman ja sijoitan oman salkkuni mukaan kuvajaan; se antaisi hieman näkemystä missä kohtaa tuotto-vaihtelu mahdollisuuksia salkku sijaitsee. Pohdittava asia on tietenkin, miltä aikaväliltä laskea tuotot ja varianssit.
 
