@@ -200,22 +200,12 @@ S on (m+n) elementtinen pystyvektori, jossa on ensin n elementtinen pystyvektori
 
 $\operatorname {S}=\begin{bmatrix}\mu_1\\.\\.\\.\\\mu_n\\0\\.\\.\\.\\0\end{bmatrix}=\begin{bmatrix}\mu\\\text{0}\end{bmatrix}$.
 
-Unit cross tarkoittaa ristin muodossa olevaa pysty- ja sarakevektoria, joiden muut elementit paitsi risteys on 0. Risteys on 1. Eli esim
+Unit cross tarkoittaa ristin muodossa olevaa pysty- ja sarakevektoria, joiden muut elementit paitsi risteys on 0. Risteys on 1. Jos M on esimerkiksi
 
- 0
-01000
- 0
- 0
- 0
-
-Jos M on esimerkiksi
-\\
-\\
 $\begin{bmatrix}\sigma_{11}&\sigma_{12}&\sigma_{13}&a_1\\\sigma_{21}&\sigma_{22}&\sigma_{23}&a_2\\\sigma_{31}&\sigma_{32}&\sigma_{33}&a_3\\a_1&a_2&a_3&0\end{bmatrix}$, ja jos korvataan toinen rivi ja sarake unit cross:lla, niin se muuttaa M matriisin
 
 $\begin{bmatrix}\sigma_{11}&0&\sigma_{13}&a_1\\0&1&0&0\\\sigma_{31}&0&\sigma_{33}&a_3\\a_1&0&a_3&0\end{bmatrix}$. Näitä käytetään out muuttujille M matriisissa ja S vektorissa.
-\\
-\\
+
 Tehokkaiden kombinaatioiden joukko muodostuu siis kriittisten suorien palasista. Jokaiseen kriittisessä suorassa on muuttujia, joiden sanotaan olevan sisällä ja loput ovat ulkona.
 
 ### 3.5. Kriittisen suoran yhtälö
